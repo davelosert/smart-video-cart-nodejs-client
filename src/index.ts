@@ -1,12 +1,11 @@
 'use strict';
+import {CartControl} from './cartControl';
+import {CartServer} from './cartServer';
 
 const OPT_GARY = {
 	HOST: 'gary',
 	PORT: 21567
 };
-
-const CartServer = require('./cartServer');
-const CartControl = require('./cartControl');
 
 const cartServer = new CartServer(OPT_GARY.HOST, OPT_GARY.PORT);
 

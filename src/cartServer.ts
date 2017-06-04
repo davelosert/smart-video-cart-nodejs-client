@@ -1,14 +1,14 @@
 'use strict';
+import * as net from 'net';
 /**
  * User: davidlosert
  * Date: 03.10.16
  * Time: 21:55
  */
 
-var net = require('net');
 
 export class CartServer {
-  private _client: any;
+  private _client: net.Socket;
 
   constructor(private host, private port) {
 	this._client = new net.Socket();
@@ -23,6 +23,10 @@ export class CartServer {
 	  console.log('CONNECTED!');
 	  cb();
 	});
+  }
+
+  disconnect(cb) {
+  	this._client.end(cb);
   }
 
   execute(command) {
