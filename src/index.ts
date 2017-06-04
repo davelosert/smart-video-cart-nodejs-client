@@ -1,13 +1,13 @@
 'use strict';
 import {CartControl} from './cartControl';
-import {CartServer} from './cartServer';
+import {TCPCartServer} from './TCPCartServer';
 
 const OPT_GARY = {
 	HOST: 'gary',
 	PORT: 21567
 };
 
-const cartServer = new CartServer(OPT_GARY.HOST, OPT_GARY.PORT);
+const cartServer = new TCPCartServer(OPT_GARY.HOST, OPT_GARY.PORT);
 
 cartServer.connect(function () {
 	let cartControl = new CartControl(cartServer);

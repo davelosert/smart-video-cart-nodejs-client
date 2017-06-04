@@ -1,5 +1,5 @@
 'use strict';
-import {CartServer} from './cartServer';
+import {TCPCartServer} from './CartServer';
 /**
  * User: davidlosert
  * Date: 03.10.16
@@ -22,7 +22,7 @@ const BASIC_COMMANDS = {
 };
 
 export class CartControl {
-	constructor(private cartServer: CartServer) {
+	constructor(private cartServer: TCPCartServer) {
 	}
 
 	forward() {

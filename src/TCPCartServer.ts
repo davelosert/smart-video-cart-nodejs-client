@@ -1,5 +1,6 @@
 'use strict';
 import * as net from 'net';
+import {TCPCartServer} from './CartServer';
 /**
  * User: davidlosert
  * Date: 03.10.16
@@ -7,7 +8,7 @@ import * as net from 'net';
  */
 
 
-export class CartServer {
+export class TCPCartServer implements TCPCartServer {
   private _client: net.Socket;
 
   constructor(private host, private port) {

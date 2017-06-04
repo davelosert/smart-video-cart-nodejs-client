@@ -1,6 +1,6 @@
 import {expect} from 'chai';
 
-import {CartServer} from '../../src/cartServer';
+import {TCPCartServer} from '../../src/TCPCartServer';
 import {CartControl} from '../../src/cartControl';
 /**
  * This test will actually open a connection to the Cart and execute the tests directly.
@@ -15,7 +15,7 @@ describe('system-test', () => {
   let cartServer;
   let cartControl;
   before((done) => {
-	cartServer = new CartServer(CONFIG.HOST, CONFIG.PORT);
+	cartServer = new TCPCartServer(CONFIG.HOST, CONFIG.PORT);
 	cartControl = new CartControl(cartServer);
 	cartServer.connect(done);
   });
