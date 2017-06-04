@@ -1,3 +1,5 @@
+import {expect} from 'chai';
+
 import {CartServer} from '../../src/cartServer';
 import {CartControl} from '../../src/cartControl';
 /**
@@ -15,10 +17,13 @@ describe('system-test', () => {
   before((done) => {
 	cartServer = new CartServer(CONFIG.HOST, CONFIG.PORT);
 	cartControl = new CartControl(cartServer);
-	cartServer.connect(() => {
-	});
+	cartServer.connect(done);
   });
+
+  it('works?', () => {
+  });
+
   after((done) => {
-     cartServer.disconnect();
+	cartServer.disconnect(done);
   })
 });
