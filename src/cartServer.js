@@ -17,16 +17,19 @@ class CartServer {
             console.error(`Error occured!`);
             console.error(error);
         });
+
+        this.host = host;
+        this.port = port;
     }
     connect(cb){
-        this._client.connect(PORT, HOST, function () {
+        this._client.connect(this.port, this.host, function () {
             console.log('CONNECTED!');
             cb();
         });
     }
 
     write(data) {
-        this._client.write()
+        this._client.write(data);
     }
 }
 
