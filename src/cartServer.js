@@ -5,9 +5,6 @@
  * Time: 21:55
  */
 
-const HOST = '192.168.178.40'; // Server
-const PORT = 21567;
-
 var net = require('net');
 
 class CartServer {
@@ -28,8 +25,8 @@ class CartServer {
         });
     }
 
-    write(data) {
-        this._client.write(data);
+    exectue(command) {
+        this._client.write(command);
     }
 }
 

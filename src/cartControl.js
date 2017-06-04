@@ -5,43 +5,61 @@
  * Time: 20:49
  */
 
-const controlCommands = ['forward', 'backward', 'left', 'right', 'stop', 'distance', 'x+', 'x-', 'y+', 'y-', 'xy_home'];
+
+const BASIC_COMMANDS = {
+	FORWARD: 'forward',
+	BACKWARD: 'backward',
+	LEFT: 'left',
+	RIGHT: 'right',
+	STOP: 'stop',
+	DISTANCE: 'distance',
+	X_UP: 'x+',
+	X_DOWN: 'x-',
+	Y_UP: 'y+',
+	Y_DOWN: 'y-',
+	CAMERA_HOME: 'xy_home'
+};
+
 class CartControl {
-    constructor(cartServer) {
-        this._cartTCPConnection = cartServer;
-    }
+	constructor(cartServer) {
+		this.cartServer = cartServer;
+	}
 
-    forward() {
-        this._cartTCPConnection.write('forward');
-    }
+	forward() {
+		this.execute(BASIC_COMMANDS.FORWARD);
+	}
 
-    backward() {
-        this._cartTCPConnection.write('backward');
-    }
+	backward() {
+		this.execute(BASIC_COMMANDS.BACKWARD);
+	}
 
-    stop() {
-        this._cartTCPConnection.write('stop');
-    }
+	stop() {
+		this.execute(BASIC_COMMANDS.STOP)
+	}
 
-    left() {
-        this._cartTCPConnection.write('left');
-    }
+	left() {
+		this.execute(BASIC_COMMANDS.LEFT)
+	}
 
-    right() {
-        this._cartTCPConnection.write('right');
-    }
+	right() {
+		this.execute(BASIC_COMMANDS.RIGHT);
+	}
 
-    turn(angle) {
-        this._cartTCPConnection.write(`turn=${angle}`)
-    }
+	turn(angle) {
+		this.execute(`turn=${angle}`)
+	}
 
-    speed(speed) {
-        this._cartTCPConnection.write(`speed${speed}`)
-    }
+	speed(speed) {
+		this.execute(`speed${speed}`)
+	}
 
-    cameraUp() {
-        this._cartTCPConnection.write()
-    }
+	cameraUp() {
+		this.execute(BASIC_COMMANDS.X_UP);
+	}
+
+	execute(command) {
+		this.cartServer.execute(command);
+	}
 }
 
 module.exports = CartControl;
