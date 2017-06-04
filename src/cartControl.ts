@@ -1,4 +1,5 @@
 'use strict';
+import {CartServer} from './cartServer';
 /**
  * User: davidlosert
  * Date: 03.10.16
@@ -20,9 +21,8 @@ const BASIC_COMMANDS = {
 	CAMERA_HOME: 'xy_home'
 };
 
-class CartControl {
-	constructor(cartServer) {
-		this.cartServer = cartServer;
+export class CartControl {
+	constructor(private cartServer: CartServer) {
 	}
 
 	forward() {
@@ -62,4 +62,3 @@ class CartControl {
 	}
 }
 
-module.exports = CartControl;

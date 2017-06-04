@@ -4,14 +4,19 @@
   "description": "A NodeJS Client Library for Sunfounders Smart Cart",
   "main": "src/index.js",
   "scripts": {
-    "start": "node src/index.js",
+    "start": "ts-node src/index.js",
     "test": "test"
   },
   "author": "David Losert",
   "license": "MIT",
   "devDependencies": {
+    "@types/mocha": "^2.2.41",
+    "@types/node": "^7.0.27",
     "chai": "^3.5.0",
     "mocha": "^3.1.0",
     "sinon": "^1.17.6"
+  },
+  "dependencies": {
+    "ts-node": "^3.0.4"
   }
 }
