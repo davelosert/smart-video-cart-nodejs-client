@@ -5,10 +5,10 @@
  * Time: 20:49
  */
 
-const controlCommands = ['forward', 'backward', 'left', 'right', 'stop', 'distance', 'x+', 'x-', 'y+', 'y-', 'xy_home']
+const controlCommands = ['forward', 'backward', 'left', 'right', 'stop', 'distance', 'x+', 'x-', 'y+', 'y-', 'xy_home'];
 class CartControl {
-    constructor(tcpConnection) {
-        this._cartTCPConnection = tcpConnection;
+    constructor(cartServer) {
+        this._cartTCPConnection = cartServer;
     }
 
     forward() {
@@ -31,8 +31,16 @@ class CartControl {
         this._cartTCPConnection.write('right');
     }
 
+    turn(angle) {
+        this._cartTCPConnection.write(`turn=${angle}`)
+    }
+
     speed(speed) {
         this._cartTCPConnection.write(`speed${speed}`)
+    }
+
+    cameraUp() {
+        this._cartTCPConnection.write()
     }
 }
 
