@@ -6,13 +6,18 @@ module.exports = {
 	output: {
 		path: path.join(__dirname, "dist"),
 		filename: "bundle.js"
+
 	},
 	resolve: {
 		extensions: [".ts", ".tsx", ".js"]
+
 	},
 	module: {
 		loaders: [
-			{test: /\.ts?$/, loader: "ts-loader"}
+			{
+				test: /\.ts?$/,
+				loader: "ts-loader"
+			}
 		]
 	},
 	devServer: {
