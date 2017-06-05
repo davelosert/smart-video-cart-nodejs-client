@@ -5,6 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "start": "ts-node src/index.js",
+    "build": "webpack",
+    "serve": "webpack-dev-server",
     "test": "test"
   },
   "author": "David Losert",
@@ -13,8 +15,12 @@
     "@types/mocha": "^2.2.41",
     "@types/node": "^7.0.27",
     "chai": "^4.0.1",
+    "html-webpack-plugin": "^2.28.0",
     "mocha": "^3.1.0",
-    "sinon": "^1.17.6"
+    "sinon": "^1.17.6",
+    "ts-loader": "^2.1.0",
+    "webpack": "^2.6.1",
+    "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
     "@types/chai": "^4.0.0",
