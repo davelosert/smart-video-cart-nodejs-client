@@ -1,5 +1,5 @@
 'use strict';
-import {CartControl} from './cartControl';
+import {CartControl} from './CartControl';
 import {TCPCartServer} from './TCPCartServer';
 
 const OPT_GARY = {

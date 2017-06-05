@@ -1,7 +1,7 @@
 import {expect} from 'chai';
 
 import {TCPCartServer} from '../../src/node-js/TCPCartServer';
-import {CartControl} from '../../src/node-js/cartControl';
+import {CartControl} from '../../src/node-js/CartControl';
 /**
  * This test will actually open a connection to the Cart and execute the tests directly.
  * Only works with a working cart and correct data.

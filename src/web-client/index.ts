@@ -1,5 +1,5 @@
 import {WSCartServer} from './WSCartServer';
-import {CartControl} from '../node-js/cartControl';
+import {CartControl} from '../node-js/CartControl';
 import {CartServer} from '../node-js/CartServer';
 const wsPath = 'ws://localhost:9990';
 document.addEventListener("DOMContentLoaded", function () {
